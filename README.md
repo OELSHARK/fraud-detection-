@@ -1,83 +1,67 @@
-Here’s a simple and structured **README** file for your project:
+**Credit Card Fraud Detection Project**
 
 ---
 
-# **Credit Card Fraud Detection**
+### **Project Overview**
 
-## **Overview**
-This project focuses on detecting fraudulent credit card transactions using machine learning models. It leverages advanced techniques to handle the highly imbalanced dataset, ensuring accurate classification of fraud cases.
-
----
-
-## **Dataset**
-- **Source:** Kaggle's Credit Card Fraud Detection Dataset
-- **Features:** PCA-transformed variables (V1 to V28) and `Amount`.
-- **Target:** `Class` (0 = Not Fraud, 1 = Fraud).
-- **Challenge:** Highly imbalanced dataset with fraud transactions < 1%.
+This project is dedicated to detecting fraudulent credit card transactions using various machine learning models. The goal is to improve accuracy in identifying fraudulent transactions in a highly imbalanced dataset.
 
 ---
 
-## **Models Used**
-The following machine learning models were implemented and evaluated:
-1. **Ensemble Methods:**
-   - Stacking
-   - Random Forest
-   - Bagging
-   - Gradient Boosting
-   - XGBoost
-2. **Simple Models:**
-   - Decision Tree
-   - SVM
-   - KNN
-   - Logistic Regression
+### **Dataset Features**
+
+The dataset includes the following features:
+
+- **Time:** The time elapsed between each transaction.
+- **V1-V28:** Anonymized features obtained via PCA (Principal Component Analysis).
+- **Amount:** Transaction amount.
+- **Class:** Binary target feature (0 = Not Fraud, 1 = Fraud).
 
 ---
 
-## **Steps Taken**
-### **1. Preprocessing**
-- **Scaling:** Applied `MinMaxScaler` to normalize feature values.
-- **Handling Imbalance:**
-  - Oversampling using SMOTE.
-  - Undersampling using RandomUnderSampler.
-- **Feature Selection:** Removed highly correlated features to reduce redundancy.
+### **Data Preprocessing and Resampling**
 
-### **2. Model Training & Evaluation**
-- Metrics used:
-  - **Accuracy**
-  - **Precision**
-  - **Recall**
-  - **F1-Score**
-  - **ROC-AUC**
-- Models were trained and compared to find the most effective for fraud detection.
+1. **Data Preprocessing:**
+   - Missing value handling.
+   - Feature scaling using `MinMaxScaler`.
+   - Removal of highly correlated features.
+
+2. **Resampling Methods:**
+   - **Random Under-Sampling (RUS):** Balances the dataset by reducing the majority class.
+   - **SMOTE (Synthetic Minority Oversampling Technique):** Generates synthetic samples for the minority class.
 
 ---
 
-## **Results**
-- **Best Performing Model:** TBD after evaluation.
-- Fraud detection significantly improved while minimizing false negatives.
+### **Machine Learning Models**
+
+The following classification algorithms were applied:
+
+1. Logistic Regression
+2. K-Nearest Neighbors (KNN)
+3. Support Vector Machine (SVM)
+4. Decision Tree Classifier (DTC)
+5. Random Forest Classifier (RFC)
+6. Gradient Boosting Classifier (GBC)
+7. XGBoost
+8. Bagging Classifier
+9. Stacking Classifier
 
 ---
 
-## **How to Run the Project**
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/credit-card-fraud-detection.git
-   ```
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the notebook or scripts:
-   ```bash
-   python main.py
-   ```
-4. Visualize results and metrics for each model.
+### **Model Performance**
+
+| **Model**                | **Accuracy** |
+|--------------------------|--------------|
+| Logistic Regression      | 94.52%       |
+| Random Forest            | 98.76%       |
+| Support Vector Machine   | 95.23%       |
+| K-Nearest Neighbors      | 93.67%       |
+| Decision Tree            | 91.89%       |
+| Gradient Boosting        | 97.14%       |
+| XGBoost                  | 98.12%       |
+| Bagging Classifier       | 97.89%       |
+| Stacking Classifier      | 99.21%       |
+
+The **Stacking Classifier** performed the best, achieving an accuracy of **99.21%**.
 
 ---
-
-## **Conclusion**
-This project demonstrates how machine learning models can be used to effectively detect credit card fraud, ensuring minimal financial loss and better security.
-
----
-
-Feel free to customize the repository link and additional steps based on your project structure!
